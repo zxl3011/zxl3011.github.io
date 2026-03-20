@@ -1,22 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
-import Card from "@/components/Card.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
-
-const posts = await getCollection("blog");
-
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
 <Layout>
@@ -40,24 +30,12 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         />
         <span class="sr-only">RSS Feed</span>
       </a>
-
+      <p>Information Technology Student & Aspiring Software Engineer</p>
       <p>
-        Information Technology Student & Aspiring Software Engineer
-      </p>
-      <p>
-        I build practical web applications and backend systems, focusing on real-world problem solving and scalable design.
-      </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
+        I build practical web applications and backend systems, focusing on
+        real-world problem solving and scalable design.
       </p>
       {
-        // only display if at least one social link is enabled
         SOCIALS.length > 0 && (
           <div class="mt-4 flex max-sm:flex-col sm:items-center">
             <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
@@ -67,42 +45,76 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       }
     </section>
 
-    {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-b border-border": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <section id="featured-projects" class="pt-12 pb-6 border-b border-border">
+      <h2 class="text-2xl font-semibold tracking-wide">Featured Projects</h2>
+      <ul class="mt-4 space-y-6">
+        <li class="border border-border rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Surfboard Rental Management System</h3>
+          <p class="mt-1 text-xs text-foreground/50 italic">Designed a layered REST API architecture with Spring Boot, containerised with Docker and deployed to Vercel.</p>
+          <!--<p class="mt-1 text-sm text-foreground/80">
+            Full-stack rental management platform handling booking and inventory workflows.
+          </p> -->
+          <p class="mt-2 text-xs text-foreground/60">Spring Boot · Docker · Vercel · REST APIs</p>
+          <div class="mt-3 flex gap-3">
+            <a
+              href="https://surfboard-rental-management.vercel.app"
+              class="text-sm text-accent hover:underline"
+            >View Project →</a>
+            <a
+              href="https://github.com/zhan2791/surfboard-rental-management"
+              class="text-sm text-accent hover:underline"
+            >GitHub →</a>
+          </div>
+        </li>
+        <li class="border border-border rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Workforce Time Management System</h3>
+          <p class="mt-1 text-xs text-foreground/50 italic">Engineered manager-facing API endpoints backed by a relational schema supporting multi-step approval workflows.</p>
+          <!--<p class="mt-1 text-sm text-foreground/80">
+            Backend system for workforce records, reporting, and workflow approvals.
+          </p> -->
+          <p class="mt-2 text-xs text-foreground/60">Java · Spring Boot · MySQL / PostgreSQL · Azure DevOps</p>
+          <div class="mt-3 flex gap-3">
+            <span class="text-sm text-foreground/40">GitHub coming soon</span>
+          </div>
+        </li>
+        <li class="border border-border rounded-lg p-4">
+          <h3 class="text-lg font-semibold">Indigenous Art Atlas</h3>
+          <p class="mt-1 text-xs text-foreground/50 italic">Integrated Leaflet.js with a server-side PHP/MariaDB backend to serve geo-tagged artwork data with access-controlled views.</p>
+          <!--<p class="mt-1 text-sm text-foreground/80">
+            Interactive map platform for Indigenous artworks with role-based access control.
+          </p> -->
+          <p class="mt-2 text-xs text-foreground/60">PHP · MariaDB · JavaScript · Leaflet.js</p>
+          <div class="mt-3 flex gap-3">
+            <span class="text-sm text-foreground/40">GitHub coming soon</span>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
-      )
-    }
+    <section id="skills" class="pt-12 pb-6">
+      <h2 class="text-2xl font-semibold tracking-wide">Skills</h2>
+      <ul class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {
+          [
+            "Java",
+            "JavaScript / TypeScript",
+            "React",
+            "Node.js / Express",
+            "MongoDB / MySQL",
+            "Spring Boot",
+            "Git / GitHub",
+          ].map(skill => (
+            <li class="rounded border border-border px-3 py-2 text-sm font-medium text-center">
+              {skill}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
     <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
+      <LinkButton href="/projects">
+        All Projects
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>
