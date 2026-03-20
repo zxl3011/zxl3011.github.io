@@ -1,0 +1,57 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Main from "@/layouts/Main.astro";
+import { SITE } from "@/config";
+---
+
+<Layout title={`Projects | ${SITE.title}`}>
+  <Header />
+  <Main
+    pageTitle="Projects"
+    pageDesc="A selection of projects I've built — spanning full-stack web apps, backend systems, and team collaborations."
+  >
+    <ul class="space-y-6">
+
+      <li class="border border-border rounded-lg p-4">
+        <h2 class="text-lg font-semibold">Surfboard Rental Management System</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">Full-stack project</p>
+        <p class="mt-2 text-sm text-foreground/80">
+          A rental management platform for handling bookings and inventory workflows.
+        </p>
+        <p class="mt-2 text-xs text-foreground/60">Spring Boot · Docker · Vercel · REST APIs</p>
+        <div class="mt-3 flex gap-3">
+          <a href="https://surfboard-rental-management.vercel.app" class="text-sm text-accent hover:underline">Live Demo →</a>
+          <a href="https://github.com/zhan2791/surfboard-rental-management" class="text-sm text-accent hover:underline">GitHub →</a>
+        </div>
+      </li>
+
+      <li class="border border-border rounded-lg p-4">
+        <h2 class="text-lg font-semibold">Workforce Time Management System (Backend)</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">Team backend project</p>
+        <p class="mt-2 text-sm text-foreground/80">
+          Manager-facing backend system for workforce records, reporting, and workflow approvals.
+        </p>
+        <p class="mt-2 text-xs text-foreground/60">Java · Spring Boot · MySQL / PostgreSQL · Azure DevOps</p>
+        <div class="mt-3">
+          <span class="text-sm text-foreground/40">GitHub coming soon</span>
+        </div>
+      </li>
+
+      <li class="border border-border rounded-lg p-4">
+        <h2 class="text-lg font-semibold">Indigenous Art Atlas</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">Team full-stack project</p>
+        <p class="mt-2 text-sm text-foreground/80">
+          Interactive map platform for Indigenous artworks with role-based access control.
+        </p>
+        <p class="mt-2 text-xs text-foreground/60">PHP · MariaDB · JavaScript · Leaflet.js</p>
+        <div class="mt-3">
+          <span class="text-sm text-foreground/40">GitHub coming soon</span>
+        </div>
+      </li>
+
+    </ul>
+  </Main>
+  <Footer />
+</Layout>
