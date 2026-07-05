@@ -1,9 +1,9 @@
 export const SITE = {
-  website: "http://localhost:4321/", // replace this with your deployed domain
+  website: "https://zxl3011.github.io/", // replace this with your deployed domain
   author: "Xinlu Zhang",
-  profile: "http://localhost:4321/",
+  profile: "https://zxl3011.github.io/",
   desc: "Portfolio and blog of Xinlu Zhang, an Information Technology student in Adelaide, Australia, focusing on software development, backend engineering, and practical projects.",
-  title: "Xinlu Zhang | Portfolio & Blog",
+  title: "Xinlu Zhang | Portfolio",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,

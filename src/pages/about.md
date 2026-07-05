@@ -3,35 +3,40 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+# About Me
 
-![Astro Paper](public/astropaper-og.jpg)
+Hi, I'm Xinlu Zhang, a graduate software developer based in Australia.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+I focus on backend and full-stack development, with hands-on experience in Java Spring Boot, REST APIs, MySQL, MariaDB, React, JavaScript, PHP, Node-RED, Docker, and cloud deployment.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+My recent projects include a workforce time management system, a surfboard rental management system, and an Indigenous art atlas. Through these projects, I have built practical experience in backend API design, relational database modelling, role-based access control, cloud deployment, API testing, and team-based software delivery.
 
-## Features
+## Technical Focus
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+- Backend development with Java Spring Boot
+- REST API design, validation, and testing
+- MySQL / MariaDB and relational database design
+- Full-stack web applications
+- Cloud deployment and CI/CD basics
+- Role-based access control and authentication workflows
+- AI-assisted development workflows
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+## Selected Projects
 
-and so much more.
+### Workforce Time Management System
 
-## Show your support
+A team-based workforce management system built with Java Spring Boot and MySQL. I developed backend APIs for staff administration and salary history, and collaborated on database-backed configuration features for standard working hours, overtime rules, penalty settings, and role data for authentication and access control.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+### Surfboard Rental Management System
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+A full-stack rental management system covering booking, inventory management, and authentication. The backend was built with Spring Boot using a layered REST API structure and Dockerised deployment, while the frontend was deployed separately.
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+### Indigenous Art Atlas
 
-Kyay zuu! 🙏🏼
+A team full-stack web application for exploring Indigenous artworks on an interactive map. I worked on user registration, login, sessions, role-based navigation, artist profiles, artist applications, and user collection features using PHP, MariaDB, JavaScript, and Leaflet.js.
+
+## Career Direction
+
+I am currently seeking graduate or junior software developer roles, especially in backend, full-stack, cloud, or software engineering teams.
+
+I am interested in building practical systems that solve real user problems and continuing to improve my engineering skills through real-world projects.

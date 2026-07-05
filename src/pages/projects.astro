@@ -13,44 +13,105 @@ import { SITE } from "@/config";
     pageDesc="A selection of projects I've built — spanning full-stack web apps, backend systems, and team collaborations."
   >
     <ul class="space-y-6">
-
       <li class="border border-border rounded-lg p-4">
         <h2 class="text-lg font-semibold">Surfboard Rental Management System</h2>
-        <p class="mt-0.5 text-xs text-foreground/50">Full-stack project</p>
-        <p class="mt-2 text-sm text-foreground/80">
-          A rental management platform for handling bookings and inventory workflows.
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Individual full-stack project
         </p>
-        <p class="mt-2 text-xs text-foreground/60">Spring Boot · Docker · Vercel · REST APIs</p>
-        <div class="mt-3 flex gap-3">
-          <a href="https://surfboard-rental-management.vercel.app" class="text-sm text-accent hover:underline">Live Demo →</a>
-          <a href="https://github.com/zhan2791/surfboard-rental-management" class="text-sm text-accent hover:underline">GitHub →</a>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A full-stack rental management system covering booking, inventory management,
+          and authentication workflows. I built the Spring Boot REST API using a layered
+          backend structure, Dockerised the backend deployment, and deployed the frontend
+          separately.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Java · Spring Boot · REST APIs · Docker · Render · Vercel
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">Highlights</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
+            <li>Designed backend API endpoints for rental and inventory workflows.</li>
+            <li>Structured the backend using controller, service, and repository layers.</li>
+            <li>Added validation and exception handling for API requests.</li>
+            <li>Deployed the backend and frontend as separate application components.</li>
+          </ul>
+        </div>
+
+        <div class="mt-4 flex gap-3">
+          <a
+            href="https://surfboard-rental-management.vercel.app"
+            class="text-sm text-accent hover:underline"
+          >
+            Live Demo →
+          </a>
+          <a
+            href="https://github.com/zxl3011/surfboard-rental-management"
+            class="text-sm text-accent hover:underline"
+          >
+            GitHub →
+          </a>
         </div>
       </li>
 
       <li class="border border-border rounded-lg p-4">
-        <h2 class="text-lg font-semibold">Workforce Time Management System (Backend)</h2>
-        <p class="mt-0.5 text-xs text-foreground/50">Team backend project</p>
-        <p class="mt-2 text-sm text-foreground/80">
-          Manager-facing backend system for workforce records, reporting, and workflow approvals.
+        <h2 class="text-lg font-semibold">Workforce Time Management System</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Team backend project · Code not public
         </p>
-        <p class="mt-2 text-xs text-foreground/60">Java · Spring Boot · MySQL / PostgreSQL · Azure DevOps</p>
-        <div class="mt-3">
-          <span class="text-sm text-foreground/40">GitHub coming soon</span>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A workforce management backend system built with Java Spring Boot and MySQL.
+          The system supports staff administration, salary records, standard working hours,
+          overtime rules, penalty configuration, and role-based access control data.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Java · Spring Boot · MySQL · REST APIs · Azure DevOps · Postman
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">My Contributions</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
+            <li>Developed backend APIs for staff administration.</li>
+            <li>Implemented salary history logic so new pay rates apply only to future records.</li>
+            <li>Added support for staff standard working hours and validation rules.</li>
+            <li>Built and collaborated on configuration APIs for overtime and penalty settings.</li>
+            <li>Worked on role data and role endpoints to support authentication and access control.</li>
+            <li>Tested backend endpoints with Postman and coordinated API contracts with frontend teammates.</li>
+          </ul>
         </div>
       </li>
 
       <li class="border border-border rounded-lg p-4">
         <h2 class="text-lg font-semibold">Indigenous Art Atlas</h2>
-        <p class="mt-0.5 text-xs text-foreground/50">Team full-stack project</p>
-        <p class="mt-2 text-sm text-foreground/80">
-          Interactive map platform for Indigenous artworks with role-based access control.
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Team full-stack project · Code not public
         </p>
-        <p class="mt-2 text-xs text-foreground/60">PHP · MariaDB · JavaScript · Leaflet.js</p>
-        <div class="mt-3">
-          <span class="text-sm text-foreground/40">GitHub coming soon</span>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          An interactive web application for exploring Indigenous artworks on a map.
+          The platform used Leaflet.js on the frontend and a PHP/MariaDB backend to manage
+          users, artwork data, artist profiles, collections, and access-controlled views.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          PHP · MariaDB · JavaScript · Leaflet.js · Role-based access
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">My Contributions</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
+            <li>Implemented user registration, login, sessions, and role-based navigation.</li>
+            <li>Built artist profile and artist application workflows.</li>
+            <li>Developed user collection and favourite artwork features.</li>
+            <li>Used prepared statements for safer database access.</li>
+            <li>Integrated backend data with frontend pages and dynamic user views.</li>
+          </ul>
         </div>
       </li>
-
     </ul>
   </Main>
   <Footer />

@@ -1,0 +1,66 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Main from "@/layouts/Main.astro";
+import { SITE } from "@/config";
+---
+
+<Layout title={`Contact | ${SITE.title}`}>
+  <Header />
+  <Main
+    pageTitle="Contact"
+    pageDesc="Get in touch with me for software developer opportunities, project discussions, or professional networking."
+  >
+    <section class="space-y-6">
+      <p class="text-foreground/80">
+        I am currently seeking graduate or junior software developer roles,
+        especially in backend, full-stack, cloud, or software engineering teams.
+      </p>
+
+      <div class="border border-border rounded-lg p-4">
+        <h2 class="text-lg font-semibold">Email</h2>
+        <p class="mt-2 text-sm text-foreground/80">
+          The best way to contact me is by email.
+        </p>
+        <a
+          href="mailto:luciazhang890@gmail.com"
+          class="mt-2 inline-block text-sm text-accent hover:underline"
+        >
+          lucyxinluzhang@gmail.com →
+        </a>
+      </div>
+
+      <div class="border border-border rounded-lg p-4">
+        <h2 class="text-lg font-semibold">GitHub</h2>
+        <p class="mt-2 text-sm text-foreground/80">
+          View my projects and code repositories.
+        </p>
+        <a
+          href="https://github.com/zxl3011"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-block text-sm text-accent hover:underline"
+        >
+          github.com/zxl3011 →
+        </a>
+      </div>
+
+      <div class="border border-border rounded-lg p-4">
+        <h2 class="text-lg font-semibold">LinkedIn</h2>
+        <p class="mt-2 text-sm text-foreground/80">
+          Connect with me professionally.
+        </p>
+        <a
+          href="https://www.linkedin.com/in/lucyzhang-au/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-block text-sm text-accent hover:underline"
+        >
+          linkedin.com/in/lucyzhang-au →
+        </a>
+      </div>
+    </section>
+  </Main>
+  <Footer />
+</Layout>
