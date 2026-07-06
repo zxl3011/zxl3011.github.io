@@ -1,4 +1,4 @@
-# Lucy Zhang Portfolio
+# My Portfolio
 
 This repository contains my personal portfolio website, built with Astro and deployed with GitHub Pages.
 
@@ -15,14 +15,6 @@ This portfolio showcases my software development projects, technical skills, and
 - HTML / CSS
 - GitHub Pages
 - GitHub Actions
-
-## Featured Projects
-
-- Surfboard Rental Management System
-- Indigenous Art Atlas
-- Enterprise Operations Portal
-- Smart Parking Chatbot
-- Workforce Time Management System
 
 ## Deployment
 
