@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Main from "@/layouts/Main.astro";
+import ProjectPreviewTitle from "@/components/ProjectPreviewTitle.astro";
 import { SITE } from "@/config";
 ---
 
@@ -13,17 +14,19 @@ import { SITE } from "@/config";
     pageDesc="A selection of projects I've built — spanning full-stack web apps, backend systems, and team collaborations."
   >
     <ul class="space-y-6">
-      <li class="border border-border rounded-lg p-4">
-        <h2 class="text-lg font-semibold">Surfboard Rental Management System</h2>
+      <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">
+          Surfboard Rental Management System
+        </h2>
         <p class="mt-0.5 text-xs text-foreground/50">
           Individual full-stack project
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
-          A full-stack rental management system covering booking, inventory management,
-          and authentication workflows. I built the Spring Boot REST API using a layered
-          backend structure, Dockerised the backend deployment, and deployed the frontend
-          separately.
+          A full-stack rental management system covering booking, inventory
+          management, and authentication workflows. I built the Spring Boot REST
+          API using a layered backend structure, Dockerised the backend
+          deployment, and deployed the frontend separately.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
@@ -32,11 +35,19 @@ import { SITE } from "@/config";
 
         <div class="mt-4">
           <h3 class="text-sm font-semibold">Highlights</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
-            <li>Designed backend API endpoints for rental and inventory workflows.</li>
-            <li>Structured the backend using controller, service, and repository layers.</li>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Designed backend API endpoints for rental and inventory workflows.
+            </li>
+            <li>
+              Structured the backend using controller, service, and repository
+              layers.
+            </li>
             <li>Added validation and exception handling for API requests.</li>
-            <li>Deployed the backend and frontend as separate application components.</li>
+            <li>
+              Deployed the backend and frontend as separate application
+              components.
+            </li>
           </ul>
         </div>
 
@@ -56,32 +67,61 @@ import { SITE } from "@/config";
         </div>
       </li>
 
-      <li class="border border-border rounded-lg p-4">
-        <h2 class="text-lg font-semibold">StitchFlow</h2>
+      <li class="rounded-lg border border-border p-4">
+        <ProjectPreviewTitle
+          headingLevel="h2"
+          href="https://stitchflow-agent.crafty-cedar-1657.chatgpt.site/"
+          imageAlt="StitchFlow project dashboard showing search, navigation, and a sample crochet workflow"
+          imageSrc="/stitchflow-preview.jpg"
+          title="StitchFlow"
+        />
         <p class="mt-0.5 text-xs text-foreground/50">
-          Individual full-stack project · OpenAI Build Week 2026
+          Individual full-stack product
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
-          A local-first workflow and progress management tool for knitters and
-          crocheters working across patterns with inconsistent terminology and
-          structure. StitchFlow turns a pattern into an editable hierarchy and
-          records the exact row, round, step, and stitch where a maker stopped.
+          An accessible workflow platform for knitters and crocheters working
+          across complex patterns and inconsistent terminology. I evolved
+          StitchFlow from a device-local prototype into an account-based product
+          that securely synchronises structured projects, progress, images, and
+          reusable measurement profiles across devices.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
-          TypeScript · React · Next.js / vinext · Vite · Tailwind CSS · Cloudflare · OpenAI Sites · localStorage
+          TypeScript · React · Supabase Auth · PostgreSQL · Row-Level Security ·
+          Cloud Storage · Cloudflare · Tailwind CSS
         </p>
 
         <div class="mt-4">
           <h3 class="text-sm font-semibold">Highlights</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
-            <li>Modelled patterns as editable Project, Section, Part, Row, Round, and Step hierarchies.</li>
-            <li>Implemented stitch-level progress tracking with sequential completion inference and full manual override.</li>
-            <li>Added US, UK, and Japanese terminology support alongside English and Simplified Chinese interfaces.</li>
-            <li>Kept project data and image attachments device-local, with no login, cloud sync, or runtime API cost.</li>
-            <li>Built accessibility and appearance controls plus a compact browser-native print-to-PDF layout.</li>
-            <li>Used Codex with GPT-5.6 Sol as a transparent implementation and reasoning partner during Build Week.</li>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Designed a typed Project, Section, Part, Row, Round, and Step
+              domain model for editable craft workflows.
+            </li>
+            <li>
+              Implemented stitch-level progress tracking with sequential
+              completion inference and full manual override.
+            </li>
+            <li>
+              Added email and Google authentication, PostgreSQL persistence,
+              row-level access policies, and private image storage with
+              Supabase.
+            </li>
+            <li>
+              Built an explicit migration flow that lets existing users import
+              local projects or retain their cloud data without silent
+              overwrites.
+            </li>
+            <li>
+              Added reusable measurement profiles, project search, client-side
+              image optimisation, and cross-device synchronisation.
+            </li>
+            <li>
+              Delivered English and Simplified Chinese interfaces,
+              terminology-aware US, UK, and Japanese pattern support,
+              accessibility controls, and print-to-PDF output.
+            </li>
           </ul>
         </div>
 
@@ -93,12 +133,6 @@ import { SITE } from "@/config";
             Live Demo →
           </a>
           <a
-            href="https://github.com/zxl3011/stitchflow-agent/tree/codex/build-week-2026"
-            class="text-sm text-accent hover:underline"
-          >
-            GitHub →
-          </a>
-          <a
             href="https://youtu.be/x8B2VpBRKBw"
             class="text-sm text-accent hover:underline"
           >
@@ -107,16 +141,17 @@ import { SITE } from "@/config";
         </div>
       </li>
 
-      <li class="border border-border rounded-lg p-4">
+      <li class="rounded-lg border border-border p-4">
         <h2 class="text-lg font-semibold">Workforce Time Management System</h2>
         <p class="mt-0.5 text-xs text-foreground/50">
           Team backend project · Code not public
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
-          A workforce management backend system built with Java Spring Boot and MySQL.
-          The system supports staff administration, salary records, standard working hours,
-          overtime rules, penalty configuration, and role-based access control data.
+          A workforce management backend system built with Java Spring Boot and
+          MySQL. The system supports staff administration, salary records,
+          standard working hours, overtime rules, penalty configuration, and
+          role-based access control data.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
@@ -125,27 +160,43 @@ import { SITE } from "@/config";
 
         <div class="mt-4">
           <h3 class="text-sm font-semibold">My Contributions</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
             <li>Developed backend APIs for staff administration.</li>
-            <li>Implemented salary history logic so new pay rates apply only to future records.</li>
-            <li>Added support for staff standard working hours and validation rules.</li>
-            <li>Built and collaborated on configuration APIs for overtime and penalty settings.</li>
-            <li>Worked on role data and role endpoints to support authentication and access control.</li>
-            <li>Tested backend endpoints with Postman and coordinated API contracts with frontend teammates.</li>
+            <li>
+              Implemented salary history logic so new pay rates apply only to
+              future records.
+            </li>
+            <li>
+              Added support for staff standard working hours and validation
+              rules.
+            </li>
+            <li>
+              Built and collaborated on configuration APIs for overtime and
+              penalty settings.
+            </li>
+            <li>
+              Worked on role data and role endpoints to support authentication
+              and access control.
+            </li>
+            <li>
+              Tested backend endpoints with Postman and coordinated API
+              contracts with frontend teammates.
+            </li>
           </ul>
         </div>
       </li>
 
-      <li class="border border-border rounded-lg p-4">
+      <li class="rounded-lg border border-border p-4">
         <h2 class="text-lg font-semibold">Indigenous Art Atlas</h2>
         <p class="mt-0.5 text-xs text-foreground/50">
           Team full-stack project · Code not public
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
-          An interactive web application for exploring Indigenous artworks on a map.
-          The platform used Leaflet.js on the frontend and a PHP/MySQL backend to manage
-          users, artwork data, artist profiles, collections, and access-controlled views.
+          An interactive web application for exploring Indigenous artworks on a
+          map. The platform used Leaflet.js on the frontend and a PHP/MySQL
+          backend to manage users, artwork data, artist profiles, collections,
+          and access-controlled views.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
@@ -154,12 +205,18 @@ import { SITE } from "@/config";
 
         <div class="mt-4">
           <h3 class="text-sm font-semibold">My Contributions</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm text-foreground/80 space-y-1">
-            <li>Implemented user registration, login, sessions, and role-based navigation.</li>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Implemented user registration, login, sessions, and role-based
+              navigation.
+            </li>
             <li>Built artist profile and artist application workflows.</li>
             <li>Developed user collection and favourite artwork features.</li>
             <li>Used prepared statements for safer database access.</li>
-            <li>Integrated backend data with frontend pages and dynamic user views.</li>
+            <li>
+              Integrated backend data with frontend pages and dynamic user
+              views.
+            </li>
           </ul>
         </div>
 
