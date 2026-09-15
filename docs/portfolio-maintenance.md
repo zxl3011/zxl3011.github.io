@@ -26,3 +26,21 @@ accurate without exposing private source code.
 - Removed the OpenAI Build Week label and implementation-partner highlight.
 - Added an accessible hover and keyboard-focus preview using a current capture
   of the deployed product. Touch devices keep the existing compact card layout.
+
+## 2026-09-15 — Current project audit
+
+- Added CaseFlow Ops as the leading project while accurately labelling it as an
+  in-progress, backend-focused system with no live frontend demo.
+- Limited CaseFlow Ops claims to merged functionality on `main`: JWT
+  authentication, role- and relationship-based authorisation, Draft case and
+  client workflows, PostgreSQL/Flyway, automated tests, and CI quality gates.
+- Updated StitchFlow for project archiving and deletion, Completed navigation,
+  streamlined manual pattern entry, and construction-method modelling.
+- Refocused the Home introduction and skill list on Java/Spring backend work,
+  secure APIs, PostgreSQL, automated testing, and CI/CD.
+- Kept Road Surface Inspection Assistant out of the public project list because
+  its video-processing and defect-detection features are not implemented yet.
+- Updated the public profile from graduate/junior positioning to Software
+  Developer, recorded the 2026 Flinders University graduation, and added
+  Australia-wide relocation availability across Home, About, Contact, metadata,
+  and repository documentation.

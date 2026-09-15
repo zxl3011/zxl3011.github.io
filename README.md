@@ -6,7 +6,7 @@ Live site: https://zxl3011.github.io/
 
 ## About
 
-This portfolio showcases my software development projects, technical skills, and learning notes. It is designed to support my applications for graduate and junior software developer roles in Australia.
+This portfolio showcases my software development projects, technical skills, and learning notes. It supports my applications for software developer roles across Australia.
 
 ## Tech Stack
 

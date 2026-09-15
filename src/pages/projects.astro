@@ -15,6 +15,69 @@ import { SITE } from "@/config";
   >
     <ul class="space-y-6">
       <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">CaseFlow Ops</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Individual backend project · In progress
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A legal matter workflow platform for a small Australian law firm,
+          developed with synthetic data. I am building the backend as a series
+          of secure vertical slices, focusing on explicit access rules,
+          transactional workflows, testable API contracts, and reproducible
+          database evolution. The React frontend is not yet connected to the
+          API, so the project is presented as backend work in progress.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Java 21 · Spring Boot · Spring Security · JJWT · PostgreSQL · Flyway ·
+          JUnit · MockMvc · Docker Compose · GitHub Actions
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">Implemented</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Implemented BCrypt credential verification and stateless JWT
+              authentication while reloading the current user from PostgreSQL on
+              protected requests.
+            </li>
+            <li>
+              Combined Partner, Lawyer, Paralegal, and Client roles with
+              case-assignment and client-ownership checks at the service
+              boundary.
+            </li>
+            <li>
+              Built transactional Draft case creation with staff assignments and
+              client creation with case-insensitive duplicate protection.
+            </li>
+            <li>
+              Added explicit response models to keep persistence relationships
+              and internal legal data out of API responses.
+            </li>
+            <li>
+              Validated security and persistence behaviour with unit, MockMvc,
+              and PostgreSQL integration tests.
+            </li>
+            <li>
+              Added immutable Flyway migrations and GitHub Actions quality gates
+              for backend tests and frontend lint/build checks.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a
+            href="https://github.com/zxl3011/caseflow-ops"
+            class="text-sm text-accent hover:underline"
+          >
+            GitHub →
+          </a>
+          <span class="text-sm text-foreground/40">No live demo yet</span>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
         <h2 class="text-lg font-semibold">
           Surfboard Rental Management System
         </h2>
@@ -118,9 +181,18 @@ import { SITE } from "@/config";
               image optimisation, and cross-device synchronisation.
             </li>
             <li>
-              Delivered English and Simplified Chinese interfaces,
-              terminology-aware US, UK, and Japanese pattern support,
-              accessibility controls, and print-to-PDF output.
+              Added reversible archiving, a Completed-project view, and
+              confirmed permanent deletion of archived projects and their stored
+              images.
+            </li>
+            <li>
+              Simplified manual pattern entry with progressive disclosure and
+              explicit flat, in-the-round, or unspecified construction methods.
+            </li>
+            <li>
+              Delivered English and Simplified Chinese interfaces, US, UK, and
+              Japanese terminology support, accessibility controls, and
+              print-to-PDF output.
             </li>
           </ul>
         </div>

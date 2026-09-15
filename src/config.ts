@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://zxl3011.github.io/", // replace this with your deployed domain
   author: "Xinlu Zhang",
   profile: "https://zxl3011.github.io/",
-  desc: "Portfolio and blog of Xinlu Zhang, an Information Technology student in Adelaide, Australia, focusing on software development, backend engineering, and practical projects.",
+  desc: "Portfolio of Xinlu Zhang, a software developer based in Australia, focusing on backend engineering, full-stack development, and practical software projects.",
   title: "Xinlu Zhang | Portfolio",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
