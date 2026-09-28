@@ -15,7 +15,7 @@ import { SOCIALS } from "@/constants";
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Xinlu Zhang
+        Lucy (Xinlu) Zhang
       </h1>
 
       <!--  链接blog
@@ -34,10 +34,22 @@ import { SOCIALS } from "@/constants";
         <span class="sr-only">RSS Feed</span>
       </a>
       -->
-      <p>Software Developer based in Australia</p>
+      <p>Software Developer · Adelaide, Australia</p>
       <p>
         I build secure backend and full-stack applications with Java, Spring
         Boot, React, REST APIs, PostgreSQL, automated testing, and CI/CD.
+      </p>
+      <p>
+        Master of IT, Flinders University (GPA 6.5/7.0) · AWS Certified Cloud
+        Practitioner · Full-time work rights in Australia · Available now and
+        open to relocation
+      </p>
+      <p>
+        <a
+          href="/Lucy_Xinlu_Zhang_CV.pdf"
+          class="text-accent hover:underline"
+          download>Download CV (PDF) →</a
+        >
       </p>
       {
         SOCIALS.length > 0 && (
@@ -55,9 +67,10 @@ import { SOCIALS } from "@/constants";
         <li class="rounded-lg border border-border p-4">
           <h3 class="text-lg font-semibold">CaseFlow Ops</h3>
           <p class="mt-1 text-xs text-foreground/50 italic">
-            Building a secure legal matter workflow backend with JWT
-            authentication, role- and case-level authorisation, transactional
-            case and client workflows, and PostgreSQL integration tests.
+            Building a secure legal matter workflow backend that combines
+            role-based and case-assignment authorisation, transactional case and
+            client workflows, 37 unit, MockMvc, and PostgreSQL integration
+            tests, and documented architecture decision records.
           </p>
           <p class="mt-2 text-xs text-foreground/60">
             Java 21 · Spring Boot · Spring Security · PostgreSQL · Flyway ·
@@ -77,15 +90,16 @@ import { SOCIALS } from "@/constants";
             Surfboard Rental Management System
           </h3>
           <p class="mt-1 text-xs text-foreground/50 italic">
-            Built a full-stack rental management system with a Spring Boot REST
-            API, Dockerised backend deployment, and a separately deployed
-            frontend.
+            Built a full-stack board rental platform with a Spring Boot REST
+            API, JPQL date-overlap checks that prevent double bookings, and a
+            Dockerised backend on Render serving a React frontend on Vercel.
           </p>
           <!--<p class="mt-1 text-sm text-foreground/80">
             Full-stack rental management platform handling booking and inventory workflows.
           </p> -->
           <p class="mt-2 text-xs text-foreground/60">
-            Java · Spring Boot · REST APIs · Docker · Render · Vercel
+            Java 21 · Spring Boot · React · TiDB/MySQL · Docker · Render ·
+            Vercel
           </p>
           <div class="mt-3 flex gap-3">
             <a
@@ -102,16 +116,15 @@ import { SOCIALS } from "@/constants";
         <li class="rounded-lg border border-border p-4">
           <ProjectPreviewTitle
             headingLevel="h3"
-            href="https://stitchflow-agent.crafty-cedar-1657.chatgpt.site/"
+            href="https://stitchflow.xinluzhang.workers.dev/"
             imageAlt="StitchFlow project dashboard showing search, navigation, and a sample crochet workflow"
             imageSrc="/stitchflow-preview.jpg"
             title="StitchFlow"
           />
           <p class="mt-1 text-xs text-foreground/50 italic">
-            Designed and shipped a full-stack craft workflow platform with
-            secure accounts, cross-device project sync, private image storage,
-            streamlined pattern entry, project search, and an archive and
-            deletion lifecycle.
+            Designed and shipped a multilingual knitting and crochet workflow
+            platform with automatic stitch-count checks, owner-only PostgreSQL
+            row-level security, cross-device sync, and private image storage.
           </p>
           <p class="mt-2 text-xs text-foreground/60">
             TypeScript · React · Supabase · PostgreSQL · Cloudflare · Tailwind
@@ -119,7 +132,7 @@ import { SOCIALS } from "@/constants";
           </p>
           <div class="mt-3 flex flex-wrap gap-3">
             <a
-              href="https://stitchflow-agent.crafty-cedar-1657.chatgpt.site/"
+              href="https://stitchflow.xinluzhang.workers.dev/"
               class="text-sm text-accent hover:underline">View Project →</a
             >
             <a
@@ -134,9 +147,10 @@ import { SOCIALS } from "@/constants";
             Workforce Time Management System
           </h3>
           <p class="mt-1 text-xs text-foreground/50 italic">
-            Developed backend APIs for staff administration and salary history,
-            and collaborated on database-backend configuration features for
-            standard hours, overtime rules, penalty settings, and role data.
+            Backend developer in an 11-person multinational Agile team,
+            clarifying business rules with the PM and BAs and building APIs for
+            staff records, salary history, standard hours, overtime, and penalty
+            settings.
           </p>
           <!--<p class="mt-1 text-sm text-foreground/80">
             Backend system for workforce records, reporting, and workflow approvals.
@@ -154,8 +168,9 @@ import { SOCIALS } from "@/constants";
         <li class="rounded-lg border border-border p-4">
           <h3 class="text-lg font-semibold">Indigenous Art Atlas</h3>
           <p class="mt-1 text-xs text-foreground/50 italic">
-            Integrated Leaflet.js with a server-side PHP/MySQL backend to serve
-            geo-tagged artwork data with access-controlled views.
+            Built authentication, sessions, and role-aware user, artist, and
+            administrator workflows for a team Leaflet.js art map backed by PHP
+            and MySQL.
           </p>
           <p class="mt-2 text-xs text-foreground/60">
             PHP · MySQL · JavaScript · Leaflet.js
@@ -176,13 +191,14 @@ import { SOCIALS } from "@/constants";
         {
           [
             "Java",
+            "Python",
             "JavaScript / TypeScript",
+            "Spring Boot / Security",
             "React",
-            "Spring Boot",
-            "Spring Security / JWT",
             "PostgreSQL / MySQL",
-            "Testing / CI/CD",
-            "Git / GitHub",
+            "JUnit / MockMvc",
+            "Docker / GitHub Actions",
+            "AWS",
           ].map(skill => (
             <li class="rounded border border-border px-3 py-2 text-center text-sm font-medium">
               {skill}

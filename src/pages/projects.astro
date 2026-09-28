@@ -11,27 +11,28 @@ import { SITE } from "@/config";
   <Header />
   <Main
     pageTitle="Projects"
-    pageDesc="A selection of projects I've built — spanning full-stack web apps, backend systems, and team collaborations."
+    pageDesc="Projects I've built — from secure backend systems and deployed full-stack products to team collaborations, testing, and cloud coursework."
   >
     <ul class="space-y-6">
       <li class="rounded-lg border border-border p-4">
         <h2 class="text-lg font-semibold">CaseFlow Ops</h2>
         <p class="mt-0.5 text-xs text-foreground/50">
-          Individual backend project · In progress
+          Individual backend project · Jul 2026 – present · In progress
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
           A legal matter workflow platform for a small Australian law firm,
-          developed with synthetic data. I am building the backend as a series
-          of secure vertical slices, focusing on explicit access rules,
-          transactional workflows, testable API contracts, and reproducible
-          database evolution. The React frontend is not yet connected to the
-          API, so the project is presented as backend work in progress.
+          developed with synthetic data. It draws on my Master of Laws
+          background: I am building the backend as a series of secure vertical
+          slices, focusing on explicit access rules, transactional workflows,
+          testable API contracts, and reproducible database evolution. The React
+          frontend is still a scaffold and is not yet connected to the API.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
-          Java 21 · Spring Boot · Spring Security · JJWT · PostgreSQL · Flyway ·
-          JUnit · MockMvc · Docker Compose · GitHub Actions
+          Java 21 · Spring Boot · Spring Security · JJWT · Spring Data JPA ·
+          PostgreSQL 16 · Flyway · JUnit · MockMvc · Docker Compose · GitHub
+          Actions
         </p>
 
         <div class="mt-4">
@@ -39,29 +40,48 @@ import { SITE } from "@/config";
           <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
             <li>
               Implemented BCrypt credential verification and stateless JWT
-              authentication while reloading the current user from PostgreSQL on
-              protected requests.
+              authentication, reloading the current user from PostgreSQL on each
+              protected request so deleted accounts and role changes take effect
+              immediately.
             </li>
             <li>
               Combined Partner, Lawyer, Paralegal, and Client roles with
-              case-assignment and client-ownership checks at the service
-              boundary.
+              case-assignment and client-ownership checks, enforced at the
+              service boundary rather than only on HTTP routes.
             </li>
             <li>
-              Built transactional Draft case creation with staff assignments and
-              client creation with case-insensitive duplicate protection.
+              Built transactional Draft case creation with automatic Lead Lawyer
+              assignment, plus client creation with case-insensitive duplicate
+              protection backed by PostgreSQL constraints and consistent 409
+              Conflict responses.
             </li>
             <li>
               Added explicit response models to keep persistence relationships
-              and internal legal data out of API responses.
+              and internal legal notes out of API responses.
             </li>
             <li>
-              Validated security and persistence behaviour with unit, MockMvc,
-              and PostgreSQL integration tests.
+              Wrote 37 unit, web-security (MockMvc), and PostgreSQL integration
+              tests covering authentication, denied access, role changes,
+              account deletion, and database constraints.
             </li>
             <li>
-              Added immutable Flyway migrations and GitHub Actions quality gates
-              for backend tests and frontend lint/build checks.
+              Recorded key trade-offs in architecture decision records, with
+              append-only Flyway migrations and GitHub Actions quality gates on
+              every pull request.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">In progress</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Paginated, role-restricted client directory API with stable
+              ordering.
+            </li>
+            <li>
+              Client portal linking, case status transitions, and React
+              authentication with protected routes.
             </li>
           </ul>
         </div>
@@ -73,7 +93,107 @@ import { SITE } from "@/config";
           >
             GitHub →
           </a>
+          <a
+            href="https://github.com/zxl3011/caseflow-ops/tree/main/docs/decisions"
+            class="text-sm text-accent hover:underline"
+          >
+            Design Decisions →
+          </a>
           <span class="text-sm text-foreground/40">No live demo yet</span>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
+        <ProjectPreviewTitle
+          headingLevel="h2"
+          href="https://stitchflow.xinluzhang.workers.dev/"
+          imageAlt="StitchFlow project dashboard showing search, navigation, and a sample crochet workflow"
+          imageSrc="/stitchflow-preview.jpg"
+          title="StitchFlow"
+        />
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Individual full-stack product · Jul 2026 – present · OpenAI Build Week
+          2026
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A terminology-aware workspace for knitters and crocheters who work
+          across English, Japanese, and Chinese patterns. I evolved StitchFlow
+          from a local-first Build Week prototype into an account-based product
+          that securely synchronises structured projects, progress, images, and
+          measurement profiles across devices, while keeping sign-in optional.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          TypeScript · React · Vite · Supabase Auth · PostgreSQL · Row-Level
+          Security · Cloud Storage · Cloudflare Workers · GitHub Actions ·
+          Tailwind CSS
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">Highlights</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Designed a typed Project, Section, Part, Row, Round, and Step
+              domain model so real patterns are not flattened into a generic
+              checklist.
+            </li>
+            <li>
+              Built text-first pattern entry with stitch-count checks that
+              calculate each row from its instruction and flag mismatches,
+              numbering gaps, and mixed US/UK terminology.
+            </li>
+            <li>
+              Recognised mixed English, Chinese, Japanese, and chart shorthand
+              through a source-recorded glossary that never silently guesses
+              unknown terms.
+            </li>
+            <li>
+              Added Google and email authentication, password reset, owner-only
+              row-level security, private user-scoped image storage, and
+              security headers.
+            </li>
+            <li>
+              Built an explicit local-to-cloud migration flow so existing users
+              can import device projects without silent overwrites.
+            </li>
+            <li>
+              Implemented an in-browser photo colour preview using k-means
+              clustering in OKLab inside a Web Worker, so photos are never
+              uploaded.
+            </li>
+            <li>
+              Delivered English and Simplified Chinese interfaces, accessibility
+              controls, print-to-PDF templates, and continuous deployment to
+              Cloudflare Workers.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">In progress</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Rule-based PDF pattern import that runs entirely in the browser,
+              scored against a local evaluation set.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a
+            href="https://stitchflow.xinluzhang.workers.dev/"
+            class="text-sm text-accent hover:underline"
+          >
+            Live Demo →
+          </a>
+          <a
+            href="https://youtu.be/x8B2VpBRKBw"
+            class="text-sm text-accent hover:underline"
+          >
+            Video Demo →
+          </a>
+          <span class="text-sm text-foreground/40">Private repository</span>
         </div>
       </li>
 
@@ -82,39 +202,46 @@ import { SITE } from "@/config";
           Surfboard Rental Management System
         </h2>
         <p class="mt-0.5 text-xs text-foreground/50">
-          Individual full-stack project
+          Individual full-stack project · Jan 2026 – Jun 2026
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
-          A full-stack rental management system covering booking, inventory
-          management, and authentication workflows. I built the Spring Boot REST
-          API using a layered backend structure, Dockerised the backend
-          deployment, and deployed the frontend separately.
+          A full-stack board rental platform supporting registration and login,
+          availability search, booking creation, and rental record management. I
+          owned the full lifecycle from data modelling and REST API design
+          through to a live deployment.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
-          Java · Spring Boot · REST APIs · Docker · Render · Vercel
+          Java 21 · Spring Boot · Spring Data JPA · React · TiDB/MySQL · Docker
+          · Render · Vercel
         </p>
 
         <div class="mt-4">
           <h3 class="text-sm font-semibold">Highlights</h3>
           <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
             <li>
-              Designed backend API endpoints for rental and inventory workflows.
+              Applied JPQL date-overlap conditions to exclude already-booked
+              boards and prevent double bookings.
             </li>
             <li>
-              Structured the backend using controller, service, and repository
-              layers.
+              Added request validation, unique email constraints, and
+              centralised exception handling for consistent error responses.
             </li>
-            <li>Added validation and exception handling for API requests.</li>
             <li>
-              Deployed the backend and frontend as separate application
-              components.
+              Used TiDB, a MySQL-compatible distributed SQL database, in the
+              live environment, with connections configured through environment
+              variables.
+            </li>
+            <li>
+              Deployed a Dockerised backend to Render and the React frontend to
+              Vercel, adding a warm-up request and loading state to handle
+              free-tier cold starts.
             </li>
           </ul>
         </div>
 
-        <div class="mt-4 flex gap-3">
+        <div class="mt-4 flex flex-wrap gap-3">
           <a
             href="https://surfboard-rental-management.vercel.app"
             class="text-sm text-accent hover:underline"
@@ -127,103 +254,24 @@ import { SITE } from "@/config";
           >
             GitHub →
           </a>
-        </div>
-      </li>
-
-      <li class="rounded-lg border border-border p-4">
-        <ProjectPreviewTitle
-          headingLevel="h2"
-          href="https://stitchflow-agent.crafty-cedar-1657.chatgpt.site/"
-          imageAlt="StitchFlow project dashboard showing search, navigation, and a sample crochet workflow"
-          imageSrc="/stitchflow-preview.jpg"
-          title="StitchFlow"
-        />
-        <p class="mt-0.5 text-xs text-foreground/50">
-          Individual full-stack product
-        </p>
-
-        <p class="mt-2 text-sm text-foreground/80">
-          An accessible workflow platform for knitters and crocheters working
-          across complex patterns and inconsistent terminology. I evolved
-          StitchFlow from a device-local prototype into an account-based product
-          that securely synchronises structured projects, progress, images, and
-          reusable measurement profiles across devices.
-        </p>
-
-        <p class="mt-2 text-xs text-foreground/60">
-          TypeScript · React · Supabase Auth · PostgreSQL · Row-Level Security ·
-          Cloud Storage · Cloudflare · Tailwind CSS
-        </p>
-
-        <div class="mt-4">
-          <h3 class="text-sm font-semibold">Highlights</h3>
-          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
-            <li>
-              Designed a typed Project, Section, Part, Row, Round, and Step
-              domain model for editable craft workflows.
-            </li>
-            <li>
-              Implemented stitch-level progress tracking with sequential
-              completion inference and full manual override.
-            </li>
-            <li>
-              Added email and Google authentication, PostgreSQL persistence,
-              row-level access policies, and private image storage with
-              Supabase.
-            </li>
-            <li>
-              Built an explicit migration flow that lets existing users import
-              local projects or retain their cloud data without silent
-              overwrites.
-            </li>
-            <li>
-              Added reusable measurement profiles, project search, client-side
-              image optimisation, and cross-device synchronisation.
-            </li>
-            <li>
-              Added reversible archiving, a Completed-project view, and
-              confirmed permanent deletion of archived projects and their stored
-              images.
-            </li>
-            <li>
-              Simplified manual pattern entry with progressive disclosure and
-              explicit flat, in-the-round, or unspecified construction methods.
-            </li>
-            <li>
-              Delivered English and Simplified Chinese interfaces, US, UK, and
-              Japanese terminology support, accessibility controls, and
-              print-to-PDF output.
-            </li>
-          </ul>
-        </div>
-
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a
-            href="https://stitchflow-agent.crafty-cedar-1657.chatgpt.site/"
-            class="text-sm text-accent hover:underline"
+          <span class="text-sm text-foreground/40">Demo accounts in README</span
           >
-            Live Demo →
-          </a>
-          <a
-            href="https://youtu.be/x8B2VpBRKBw"
-            class="text-sm text-accent hover:underline"
-          >
-            Video Demo →
-          </a>
         </div>
       </li>
 
       <li class="rounded-lg border border-border p-4">
         <h2 class="text-lg font-semibold">Workforce Time Management System</h2>
         <p class="mt-0.5 text-xs text-foreground/50">
-          Team backend project · Code not public
+          Team backend project · Mar 2026 – Jun 2026 · 11-person multinational
+          Agile team · Code not public
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
-          A workforce management backend system built with Java Spring Boot and
-          MySQL. The system supports staff administration, salary records,
-          standard working hours, overtime rules, penalty configuration, and
-          role-based access control data.
+          A workforce management backend built with Java Spring Boot and MySQL,
+          supporting staff administration, salary records, standard working
+          hours, overtime rules, penalty configuration, and role-based access
+          control data. I worked as a backend developer alongside a PM, business
+          analysts, and frontend and backend colleagues.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
@@ -233,26 +281,104 @@ import { SITE } from "@/config";
         <div class="mt-4">
           <h3 class="text-sm font-semibold">My Contributions</h3>
           <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
-            <li>Developed backend APIs for staff administration.</li>
             <li>
-              Implemented salary history logic so new pay rates apply only to
-              future records.
+              Clarified requirements, business rules, and delivery priorities
+              directly with the PM and BAs.
             </li>
             <li>
-              Added support for staff standard working hours and validation
-              rules.
+              Developed backend APIs and business validation for staff
+              administration and standard working hours.
+            </li>
+            <li>
+              Implemented salary history logic so new pay rates apply only to
+              future records while preserving historical payroll data.
             </li>
             <li>
               Built and collaborated on configuration APIs for overtime and
-              penalty settings.
+              penalty settings, and on role data supporting access control.
             </li>
             <li>
-              Worked on role data and role endpoints to support authentication
-              and access control.
+              Tracked tasks and defects in Azure DevOps and validated normal,
+              error, and boundary scenarios with Postman during frontend
+              integration.
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">Fearless Timetable Optimiser</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Four-person course project · Apr 2026 – Jun 2026 · High Distinction ·
+          Code not public
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          An AI-assisted Java command-line timetable application, generated and
+          refined through prompt engineering from a written specification, then
+          rigorously tested to evaluate the risks of AI-generated code.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Java 17 · JUnit 5 · Maven · Prompt engineering
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">My Contributions</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Implemented and tested the ClassManager, TimetableManager, and
+              console interaction components.
             </li>
             <li>
-              Tested backend endpoints with Postman and coordinated API
-              contracts with frontend teammates.
+              Designed and executed 60 JUnit 5 tests covering CSV import,
+              combined search, duplicate data, invalid input, and exceptional
+              boundaries.
+            </li>
+            <li>
+              Found three logic defects: case-sensitive timetable-name
+              uniqueness, inconsistent substring matching, and an incomplete
+              equals/hashCode that let records silently replace each other.
+            </li>
+            <li>
+              Helped consolidate the team’s 141 executed tests (136 passing)
+              into defect evidence and post-fix regression recommendations.
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">YouTube Trender</h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Two-person course project · 2025 S2 · Code not public
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A Java Swing desktop application that reads YouTube Data API JSON
+          files and supports video display, sorting, search, and trend-term
+          analysis.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Java · Swing · JSON parsing · JUnit 5 · SVN
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">My Contributions</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Implemented the video domain model and JSON parser, handling file
+              access failures, malformed content, and missing fields through
+              custom exceptions.
+            </li>
+            <li>
+              Built an inverted trend-term index with HashMap, using HashSet to
+              avoid double-counting terms within a video.
+            </li>
+            <li>
+              Maintained 72 JUnit 5 tests with 100% class, 81% method, and 76%
+              line coverage, alongside Javadoc and SVN history.
             </li>
           </ul>
         </div>
@@ -261,44 +387,161 @@ import { SITE } from "@/config";
       <li class="rounded-lg border border-border p-4">
         <h2 class="text-lg font-semibold">Indigenous Art Atlas</h2>
         <p class="mt-0.5 text-xs text-foreground/50">
-          Team full-stack project · Code not public
+          Team full-stack project · 2025 S2 · Code not public
         </p>
 
         <p class="mt-2 text-sm text-foreground/80">
           An interactive web application for exploring Indigenous artworks on a
-          map. The platform used Leaflet.js on the frontend and a PHP/MySQL
-          backend to manage users, artwork data, artist profiles, collections,
-          and access-controlled views.
+          map. The platform used Leaflet.js and OpenStreetMap on the frontend
+          and a PHP/MySQL backend to manage users, artwork data, artist
+          profiles, collections, and access-controlled views.
         </p>
 
         <p class="mt-2 text-xs text-foreground/60">
-          PHP · MySQL · JavaScript · Leaflet.js · Role-based access
+          PHP · MariaDB/MySQL · JavaScript · AJAX · Leaflet.js · Role-based
+          access
         </p>
 
         <div class="mt-4">
           <h3 class="text-sm font-semibold">My Contributions</h3>
           <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
             <li>
-              Implemented user registration, login, sessions, and role-based
-              navigation.
+              Implemented user registration, login, password hashing, sessions,
+              and role-based navigation for public users, artists, and
+              administrators.
             </li>
             <li>Built artist profile and artist application workflows.</li>
             <li>Developed user collection and favourite artwork features.</li>
             <li>Used prepared statements for safer database access.</li>
             <li>
-              Integrated backend data with frontend pages and dynamic user
-              views.
+              Integrated backend data with frontend pages through PHP rendering
+              and AJAX interactions.
             </li>
           </ul>
         </div>
 
-        <div class="mt-4 flex gap-3">
+        <div class="mt-4 flex flex-wrap gap-3">
           <a
             href="https://indigenous-art-atlas.onrender.com"
             class="text-sm text-accent hover:underline"
           >
             Live Demo →
           </a>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">
+          University Smart Parking Assistant
+        </h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Team course project · 2026 S1 · Code not public
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A conversational assistant that helps students find parking on campus
+          through natural-language questions.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          IBM watsonx Assistant · Node-RED · Firebase · Google Maps API
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">My Contributions</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Owned the watsonx Assistant natural-language layer, configuring
+              parking actions and example phrases.
+            </li>
+            <li>
+              Integrated watsonx API requests through Node-RED, extracting
+              intent, confidence, and response objects to route requests.
+            </li>
+            <li>
+              Normalised action IDs into service categories such as nearest car
+              park, emptiest car park, and notification requests, and took part
+              in multi-turn conversation testing.
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">
+          Cloud Data Pipeline and Data Quality
+        </h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Individual coursework · 2025 S1
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          Serverless data collection and data-quality analysis completed for
+          Data Engineering and Cloud Computing coursework.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Python · AWS Lambda · DynamoDB · EventBridge · S3 · Glue DataBrew ·
+          QuickSight
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">Highlights</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Configured a Python Lambda function, triggered by EventBridge
+              every five minutes, to call an external API and write JSON records
+              to DynamoDB.
+            </li>
+            <li>
+              Assessed data-quality risks such as multilingual text, reposts,
+              spam, and emoji, and proposed extensions with Glue DataBrew,
+              QuickSight, and S3.
+            </li>
+            <li>
+              Profiled 200 healthcare records for missingness, consistency, and
+              anomalies, and proposed an AWS data architecture.
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rounded-lg border border-border p-4">
+        <h2 class="text-lg font-semibold">
+          SDG Tabletop Game – Application Testing
+        </h2>
+        <p class="mt-0.5 text-xs text-foreground/50">
+          Four-person course project · 2026 S1
+        </p>
+
+        <p class="mt-2 text-sm text-foreground/80">
+          A black-box test strategy for an online multiplayer tabletop game
+          covering player and facilitator dashboards, trades, project execution,
+          voting, and results.
+        </p>
+
+        <p class="mt-2 text-xs text-foreground/60">
+          Black-box testing · Boundary-value analysis · Decision tables ·
+          Negative testing
+        </p>
+
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">My Contributions</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/80">
+            <li>
+              Designed and executed 20 test cases for the trade, project
+              execution, and voting modules.
+            </li>
+            <li>
+              Verified consistency of ownership, cash, remaining time, and
+              impact metrics after normal and abnormal operations.
+            </li>
+            <li>
+              Found four failure scenarios, including insufficient-funds trades,
+              edits after time expiry, and inconsistent voting thresholds, and
+              documented regression recommendations.
+            </li>
+          </ul>
         </div>
       </li>
     </ul>
