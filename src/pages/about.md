@@ -69,3 +69,7 @@ A full-stack board rental platform. I built the Spring Boot REST API with a laye
 I am open to software developer opportunities across backend, full-stack, cloud, and general software engineering teams, and I am particularly interested in legal-tech, compliance, and international products where my legal and language background adds value.
 
 I enjoy building practical, secure systems that solve real user problems, and I want to keep strengthening my engineering judgement through production-minded work.
+
+## Outside of Work
+
+I knit and crochet, often from English, Japanese, and Chinese patterns. Keeping track of where I stopped across inconsistent notation is what led me to build StitchFlow.
