@@ -3,8 +3,6 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-# About Me
-
 Hi, I'm Lucy (Xinlu) Zhang, a software developer based in Adelaide, South Australia. I completed a Master of Information Technology at Flinders University in July 2026 with a GPA of 6.5/7.0. I have full-time work rights in Australia, am available immediately, and am happy to relocate anywhere in Australia for the right opportunity.
 
 I focus on backend and full-stack development, with hands-on experience in Java, Spring Boot, Spring Security, REST APIs, PostgreSQL, MySQL, React, TypeScript, Docker, automated testing, CI/CD, and cloud deployment.
